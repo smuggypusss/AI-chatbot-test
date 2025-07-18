@@ -48,7 +48,7 @@ def rerank_with_gpt(question, chunks, top_n=4):
         ranked_indices = json.loads(response.choices[0].message.content.strip())
         return [chunks[i] for i in ranked_indices[:top_n] if i < len(chunks)]
     except Exception as e:
-        st.error(f"GPT reranking failed: {e}")
+        #st.error(f"GPT reranking failed: {e}")
         return chunks[:top_n]
 
 
@@ -77,7 +77,7 @@ Question:
 
 # --- STREAMLIT UI ---
 st.set_page_config(page_title="🚑 ResQ Chatbot", layout="centered")
-st.title("🚑 ResQ Emergency Chatbot")
+st.title("🚑 ResQ Emergency Document Chatbot")
 
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
