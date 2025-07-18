@@ -77,7 +77,7 @@ Question:
 
 # --- STREAMLIT UI ---
 st.set_page_config(page_title="🚑 ResQ Chatbot", layout="centered")
-st.title("🚑 ResQ Emergency Document Chatbot")
+st.title("🚑 ResQ Emergency Chatbot")
 
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
